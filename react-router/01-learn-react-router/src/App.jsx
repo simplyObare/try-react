@@ -5,6 +5,7 @@ import Dashboard from './components/Dashboard'
 import Settings from './components/Settings'
 import Navbar from './components/Navbar'
 import PageNotFound from './components/PageNotFound'
+import OrderSummary from './components/OrderSummary'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/dashboard" element={<Dashboard name="Obare" />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/order-summary" element={<OrderSummary />} />
       </Routes>
     </Router>
   )
