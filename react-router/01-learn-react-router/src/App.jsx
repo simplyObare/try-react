@@ -14,7 +14,7 @@ function App() {
         <Route path="*" element={<PageNotFound />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard name="Obare" />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>
     </Router>
