@@ -49,7 +49,7 @@ function App() {
         <Route path="/order-summary" element={<OrderSummary />} />
         <Route path="products" element={<Products />}>
           <Route path="featured" element={<FeaturedProducts />} />
-          <Route path="trending" elements={<TrendingProducts />} />
+          <Route path="trending" index elements={<TrendingProducts />} />
         </Route>
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
       </Routes>
