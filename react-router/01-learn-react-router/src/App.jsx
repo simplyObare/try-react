@@ -12,6 +12,9 @@ import Settings from './components/Settings'
 import PageNotFound from './components/PageNotFound'
 import OrderSummary from './components/OrderSummary'
 import Login from './components/Login'
+import Products from './components/Products'
+import { FeaturedProducts } from './components/FeaturedProducts'
+import TrendingProducts from './components/TrendingProducts'
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -30,6 +33,7 @@ function App() {
         <NavLink to="/about">About</NavLink>
         <NavLink to="/dashboard">Dashboard</NavLink>
         <NavLink to="/settings">Settings</NavLink>
+        <NavLink to="products">Products</NavLink>
         {isLoggedIn ? (
           <button onClick={handleLogout}>Log Out</button>
         ) : (
@@ -43,6 +47,10 @@ function App() {
         <Route path="/dashboard" element={<Dashboard name="Obare" />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/order-summary" element={<OrderSummary />} />
+        <Route path="products" element={<Products />}>
+          <Route path="featured" element={<FeaturedProducts />} />
+          <Route path="trending" elements={<TrendingProducts />} />
+        </Route>
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
       </Routes>
     </Router>
