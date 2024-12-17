@@ -1,16 +1,16 @@
-import ProductCard from '../components/ProductCard'
+import ProductCart from '../components/ProductCart'
 import { products } from '../data/products'
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div>
-      <h1 className="text-3xl my-5">List Products</h1>
+      <h1 className="text-3xl my-5">Product List</h1>
       <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5">
         {products.map((product, key) => (
-          <ProductCard key={key} data={product} />
+          <ProductCart data={product} key={key} />
         ))}
       </div>
     </div>
   )
 }
-export default Home
+export default HomePage

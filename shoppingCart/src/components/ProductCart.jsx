@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom'
-import iconCart from '../assets/images/iconCart.png'
-import { useSelector, useDispatch } from 'react-redux'
+import cartIcon from '../assets/images/iconCart.png'
+import { useDispatch, useSelector } from 'react-redux'
 import { addToCart } from '../store/Cart'
+import PropTypes from 'prop-types'
 
-const ProductCard = (props) => {
+const ProductCart = (props) => {
   const carts = useSelector((store) => store.cart.items)
-  console.log(carts)
-
-  const { id, image, name, slug, price } = props.data
+  const { id, name, price, image, slug } = props.data
   const dispatch = useDispatch()
   const handleAddToCart = () => {
     dispatch(
@@ -17,7 +16,6 @@ const ProductCard = (props) => {
       })
     )
   }
-
   return (
     <div className="bg-white p-5 rounded-xl shadow-sm">
       <Link to={slug}>
@@ -36,11 +34,23 @@ const ProductCard = (props) => {
           className="bg-gray-300 p-2 rounded-md text-sm hover:bg-gray-400 flex gap-2"
           onClick={handleAddToCart}
         >
-          <img src={iconCart} alt="" className="w-5" />
+          <img src={cartIcon} alt="" className="w-5" />
           Add To Cart
         </button>
       </div>
     </div>
   )
 }
-export default ProductCard
+
+ProductCart.propTypes = {
+  data: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+  }).isRequired,
+}
+
+export default ProductCart

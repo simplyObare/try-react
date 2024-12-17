@@ -1,15 +1,16 @@
 import { Outlet } from 'react-router-dom'
+import CartTabs from './CartTabs'
 import { Header } from './Header'
-import CartTab from './CartTab'
 
-export const Layout = () => {
+const Layout = () => {
   return (
     <div className="bg-zinc-200">
-      <main className="w-[1200px] max-w-full mx-auto p-5">
+      <main className="w-[1200] max-w-full m-auto p-5">
         <Header />
         <Outlet />
       </main>
-      <CartTab />
+      <CartTabs />
     </div>
   )
 }
+export default Layout
